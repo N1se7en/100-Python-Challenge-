@@ -1,0 +1,554 @@
+# Problem 1
+
+l=[]
+for i in range(2000, 3201):
+    if (i%7==0) and (i%5!=0):
+        l.append(str(i))
+
+print (','.join(l))
+#--------------------------------------------------------#
+
+# Problem 2
+def fact(x):
+    if x == 0:
+        return 1
+    return x * fact(x - 1)
+
+x = int(input("Enter Number: "))
+print (fact(x))
+#--------------------------------------------------------#
+
+# Problem 3
+
+n=int(input("Enter number: "))
+d=dict()
+for i in range(1,n+1):
+    d[i]=i*i
+
+print (d)
+
+#--------------------------------------------------------#
+
+# Problem 4
+
+values=input("Enter numbers: ")
+l = values.split(",")
+t = tuple(l)
+print (l)
+print (t)
+
+#--------------------------------------------------------#
+
+# Problem 5
+
+class InputOutString(object):
+    def __init__(self):
+        self.s = ""
+
+    def getString(self):
+        self.s = input()
+
+    def printString(self):
+        print (self.s.upper())
+
+strObj = InputOutString()
+strObj.getString()
+strObj.printString()
+
+#--------------------------------------------------------#
+
+# Problem 6
+
+import math
+
+c = 50
+h = 30
+result = []
+
+n = input("Enter values of d: ")
+values = n.split(",")
+
+for d in values:
+    result.append(str(int(round(math.sqrt(2*c*float(d)/h)))))
+
+print(",".join(result))
+
+
+#--------------------------------------------------------#
+
+# Problem 7
+
+input_str = input()
+dimensions=[int(x) for x in input_str.split(',')]
+rowNum=dimensions[0]
+colNum=dimensions[1]
+multilist = [[0 for col in range(colNum)] for row in range(rowNum)]
+
+for row in range(rowNum):
+    for col in range(colNum):
+        multilist[row][col]= row*col
+
+print (multilist)
+
+
+#--------------------------------------------------------#
+
+# Problem 8
+
+items=[x for x in input().split(',')]
+items.sort()
+print (','.join(items))
+
+#--------------------------------------------------------#
+
+# Problem 9
+
+lines = []
+while True:
+    s = input()
+    if s:
+        lines.append(s.upper())
+    else:
+        break;
+
+for i in lines:
+    print (i)
+    
+#--------------------------------------------------------#
+
+# Problem 10
+
+s = input()
+words = [word for word in s.split(" ")]
+print (" ".join(sorted(list(set(words)))))
+
+#--------------------------------------------------------#
+
+# Problem 11 
+
+value = []
+items=[x for x in input().split(',')]
+for p in items:
+    intp = int(p, 2)
+    if not intp%5:
+        value.append(p)
+
+print (','.join(value))
+
+#--------------------------------------------------------#
+
+# Problem 12
+
+values = []
+
+for i in range(1000, 3001):
+    
+    s = str(i)
+    if (int(s[0])%2==0) and (int(s[1])%2==0) and (int(s[2])%2==0) and (int(s[3])%2==0):
+        values.append(s)
+
+print (",".join(values))
+
+#--------------------------------------------------------#
+
+# Problem 13
+
+s = input()
+d={"DIGITS":0, "LETTERS":0}
+for c in s:
+    if c.isdigit():
+        d["DIGITS"]+=1
+    elif c.isalpha():
+        d["LETTERS"]+=1
+    else:
+        pass
+print ("LETTERS", d["LETTERS"])
+print ("DIGITS", d["DIGITS"])
+
+#--------------------------------------------------------#
+
+# Problem 14
+
+s = input()
+d={"UPPER CASE":0, "LOWER CASE":0}
+for c in s:
+    if c.isupper():
+        d["UPPER CASE"]+=1
+    elif c.islower():
+        d["LOWER CASE"]+=1
+    else:
+        pass
+print ("UPPER CASE", d["UPPER CASE"])
+print ("LOWER CASE", d["LOWER CASE"])
+
+#--------------------------------------------------------#
+
+# Prblem 15
+
+a = input()
+n1 = int( "%s" % a )
+n2 = int( "%s%s" % (a,a) )
+n3 = int( "%s%s%s" % (a,a,a) )
+n4 = int( "%s%s%s%s" % (a,a,a,a) )
+print (n1+n2+n3+n4)
+
+#--------------------------------------------------------#
+
+
+# Problem 16
+
+values = input()
+numbers = [
+x for x in values.split(",") 
+if int(x)%2!=0
+]
+print (",".join(numbers))
+
+
+#--------------------------------------------------------#
+
+
+# Problem 17
+
+netAmount = 0
+while True:
+    s = input()
+
+    if not s:
+        break
+
+    values = s.split(" ")
+    operation = values[0]
+    amount = int(values[1])
+
+    if operation=="D":
+        netAmount+=amount
+
+    elif operation=="W":
+        netAmount-=amount
+        
+    else:
+        pass
+print (netAmount)
+
+#--------------------------------------------------------#
+
+
+# Problem 18
+
+import re
+value = []
+items =[x for x in input().split(',')]
+for p in items:
+    if len(p)<6 or len(p)>12:
+        continue
+
+    else:
+        pass
+
+    if not re.search("[a-z]",p):
+        continue
+
+    elif not re.search("[0-9]",p):
+        continue
+
+    elif not re.search("[A-Z]",p):
+        continue
+
+    elif not re.search("[$#@]",p):
+        continue
+
+    elif re.search("\s",p):
+        continue
+
+    else:
+        pass
+    value.append(p)
+
+print (",".join(value))
+
+#--------------------------------------------------------#
+
+
+# Problem 19
+
+from operator import itemgetter, attrgetter
+
+l = []
+while True:
+    s = input()
+    if not s:
+        break
+    
+    l.append(tuple(s.split(",")))
+
+print (sorted(l, key=itemgetter(0,1,2)))
+
+#--------------------------------------------------------#
+
+
+# Problem 20
+
+def putNumbers(n):
+    i = 0
+    while i<n:
+        j=i
+        i=i+1
+        if j%7==0:
+            yield j
+
+for i in putNumbers(100):
+    print (i)
+
+#--------------------------------------------------------#
+
+
+# Problem 21
+
+import math
+pos = [0,0]
+while True:
+    s = input()
+    if not s:
+        break
+
+    movement = s.split(" ")
+    direction = movement[0]
+    steps = int(movement[1])
+
+    if direction=="UP":
+        pos[0]+=steps
+
+    elif direction=="DOWN":
+        pos[0]-=steps
+        
+    elif direction=="LEFT":
+        pos[1]-=steps
+
+    elif direction=="RIGHT":
+        pos[1]+=steps
+
+    else:
+        pass
+
+print (int(round(math.sqrt(pos[1]**2+pos[0]**2))))
+
+
+#--------------------------------------------------------#
+
+
+# Problem 22
+
+freq = {}
+line = input()
+for word in line.split():
+    freq[word] = freq.get(word,0)+1
+
+words = freq.keys()
+sorted(words)
+
+for w in words:
+    print ("%s:%d" % (w,freq[w]))
+
+
+#--------------------------------------------------------#
+
+
+# Problem 23
+
+def square(num):
+    return num ** 2
+
+print (square(2))
+print (square(3))
+
+
+#--------------------------------------------------------#
+
+
+# Problem 24
+
+print (abs.__doc__)
+print (int.__doc__)
+print (input.__doc__)
+
+def square(num):
+    '''Return the square value of the input number.
+    
+    The input number must be integer.
+    '''
+    return num ** 2
+
+print (square(2))
+print (square.__doc__)
+
+
+#--------------------------------------------------------#
+
+
+# Problem 25
+
+class Person:
+    # Define the class parameter "name"
+    name = "Person"
+    
+    def __init__(self, name = None):
+        # self.name is the instance parameter
+        self.name = name
+
+jeffrey = Person("Jeffrey")
+print ("%s name is %s" % (Person.name, jeffrey.name))
+
+nico = Person()
+nico.name = "Nico"
+print ("%s name is %s" % (Person.name, nico.name))
+
+
+
+#--------------------------------------------------------#
+
+
+# Problem 26
+
+def SumFunction(number1, number2):
+	return number1+number2
+
+print (SumFunction(1,2))
+
+
+#--------------------------------------------------------#
+
+
+# Problem 27
+
+def printValue(n):
+	print (int(n))
+
+printValue(3)
+
+
+#--------------------------------------------------------#
+
+
+# Problem 28
+
+def printValue(n):
+	print (str(n))
+
+printValue(3)
+
+
+#--------------------------------------------------------#
+
+
+# Problem 29
+
+def printValue(s1,s2):
+	print (int(s1)+int(s2))
+
+printValue("3","4") 
+
+
+#--------------------------------------------------------#
+
+
+# Problem 30
+
+def printValue(s1,s2):
+	print (s1+s2)
+
+printValue("3","4")
+
+
+#--------------------------------------------------------#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
