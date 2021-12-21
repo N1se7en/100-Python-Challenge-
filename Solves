@@ -539,62 +539,779 @@ printDict()
 
  # Problem #36
 
+def printDict():
+	d = dict()
+	for i in range(1,21):
+		d[i]=i**2
+
+	for k in d.keys():	
+		print (k)
+		
+printDict()
+
+#--------------------------------------------------------#
+
+# Problem 37
+
+def printList():
+	l=list()
+	for i in range(1,21):
+		l.append(i**2)
+	print (l)
+		
+printList()
+
+#--------------------------------------------------------#
+
+# Problem 38
+
+
+def printList():
+	l=list()
+	for i in range(1,21):
+		l.append(i**2)
+	print (l[:5])
+		
+
+printList()
+
+#--------------------------------------------------------#
+
+
+# Problem 39
+
+def printList():
+	l=list()
+	for i in range(1,21):
+		l.append(i**2)
+	print (l[-5:])
+		
+printList()
+
+#--------------------------------------------------------#
+
+
+# Problem 40
+
+def printList():
+	l=list()
+	for i in range(1,21):
+		l.append(i**2)
+	print (l[5:])
+		
+
+printList()
+
+#--------------------------------------------------------#
+
+# Problem 41
+
+def printTuple():
+	l=list()
+	for i in range(1,21):
+		l.append(i**2)
+	print (tuple(l))
+		
+printTuple()
+
+#--------------------------------------------------------#
+
+
+# Problem 42
+
+tp = (1,2,3,4,5,6,7,8,9,10)
+tp1 = tp[:5]
+tp2 = tp[5:]
+print (tp1)
+print (tp2)
+
+#--------------------------------------------------------#
+
+# Problem 43
+
+tp=(1,2,3,4,5,6,7,8,9,10)
+li=list()
+for i in range (len(tp)):
+	if tp[i]%2==0:
+		li.append(tp[i])
+
+tp2=tuple(li)
+print (tp2)
+
+#--------------------------------------------------------#
+
+
+# Problem 44
+
+s= input()
+
+if s=="yes" or s=="YES" or s=="Yes":
+    print "Yes"
+
+else:
+    print "No"
+
+#--------------------------------------------------------#
+
+
+# Problem 45
+
+l = [1,2,3,4,5,6,7,8,9,10]
+evenNumbers = filter(lambda x: x%2==0, l)
+print (list(evenNumbers))
+
+#--------------------------------------------------------#
+
+
+# Problem 46
+
+l = [1,2,3,4,5,6,7,8,9,10]
+squaredNumbers = map(lambda x: x**2, l)
+print (list(squaredNumbers))
+
+--------------------------------------------------------#
+
+# Problem 47
+
+l = [1,2,3,4,5,6,7,8,9,10]
+evenSqrNumbers = map(lambda x: x**2, filter(lambda x: x%2==0, l))
+print (list(evenSqrNumbers))
+
+--------------------------------------------------------#
+
+# Problem 48
+
+evenNumbers = filter(lambda x: x%2==0, range(1,21))
+print (list(evenNumbers))
+
+#--------------------------------------------------------#
+
+# Problem 49
+
+squaredNumbers = map(lambda x: x**2, range(1,21))
+print (list(squaredNumbers))
+
+#--------------------------------------------------------#
+
+# Problem 50
+
+class American(object):
+    @staticmethod
+    def printNationality():
+        print ("America")
+
+anAmerican = American()
+anAmerican.printNationality()
+American.printNationality()
+
+#--------------------------------------------------------#
+
+# Problem 51
+
+class American(object):
+    def __repr__(self):
+         return "American()"
+    
+   
+
+class NewYorker(American):
+    def __repr__(self):
+         return "NewYorker()"
+    
+
+anAmerican = American()
+aNewYorker = NewYorker()
+
+print (anAmerican)
+print (aNewYorker)
+
+
+#--------------------------------------------------------#
+
+# Problem 52
+
+class Circle(object):
+    def __init__(self, r):
+        self.radius = r
+
+    def area(self):
+        return self.radius**2*3.14
+
+aCircle = Circle(2)
+print (aCircle.area())
+
+#--------------------------------------------------------#
+
+# Problem 53
+
+class Rectangle(object):
+    def __init__(self, l, w):
+        self.length = l
+        self.width  = w
+
+    def area(self):
+        return self.length*self.width
+
+aRectangle = Rectangle(2,10)
+print (aRectangle.area())
+
+#--------------------------------------------------------#
+
+# Problem 54
+
+class Shape(object):
+    def __init__(self):
+        pass
+
+    def area(self):
+        return 0
+
+class Square(Shape):
+    def __init__(self, l):
+        Shape.__init__(self)
+        self.length = l
+
+    def area(self):
+        return self.length*self.length
+
+aSquare= Square(3)
+print (aSquare.area())
+
+#--------------------------------------------------------#
+
+# Problem 55
+
+raise RuntimeError('something wrong')
+
+
+#--------------------------------------------------------#
+
+# Prblem 56
+
+def throws():
+    return 5/0
+
+try:
+    throws()
+except ZeroDivisionError:
+    print ("division by zero!")
+except (Exception,err):
+    print ('Caught an exception')
+finally:
+    print ('In finally block for cleanup')
+    
+
+#--------------------------------------------------------#
+
+# Problem 57
+
+class MyError(Exception):
+    """My own exception class
+
+    Attributes:
+        msg  -- explanation of the error
+    """
+
+    def __init__(self, msg):
+        self.msg = msg
+
+error = MyError("something wrong")
+print (error)
+
+#--------------------------------------------------------#
+
+# Problem 58
+
+import re
+emailAddress = input()
+pat2 = "(\w+)@((\w+\.)+(com))"
+r2 = re.match(pat2,emailAddress)
+print (r2.group(1))
+
+#--------------------------------------------------------#
+
+# Problem 59
+
+import re
+emailAddress = input()
+pat2 = "(\w+)@(\w+)\.(com)"
+r2 = re.match(pat2,emailAddress)
+print (r2.group(2))
+
+
+#--------------------------------------------------------#
+
+# Problem 60
+
+import re
+s = input()
+print (re.findall("\d+",s))
+
+#--------------------------------------------------------#
+
+# Problem 61
+
+unicodeString = u'hello world!'
+print (unicodeString)
+
+
+#--------------------------------------------------------#
+
+
+# Problem 62 
+
+s = input()
+u = str(s) 		#Python 3 renamed the unicode type to str
+print (u)  
+
+#--------------------------------------------------------#
+
+# Problem 63
+
+# -*- coding: utf-8 -*-
+
+#--------------------------------------------------------#
+
+
+# Problem 64
+
+n=int(input())
+sum = 0.0
+for i in range(1,n+1):
+    sum += float(float(i)/(i+1))
+print (sum)
+
+#--------------------------------------------------------#
+
+# Problem 65
+
+def f(n):
+    if n==0:
+        return 0
+    else:
+        return f(n-1)+100
+
+n=int(input())
+print (f(n))
+
+
+#--------------------------------------------------------#
+
+# Problem 66
+
+def f(n):
+    if n == 0: return 0
+    elif n == 1: return 1
+    else: return f(n-1)+f(n-2)
+
+n=int(input())
+print (f(n))
+
+#--------------------------------------------------------#
+
+
+# Problem 67
+
+def f(n):
+    if n == 0: 
+        return 0
+    elif n == 1: 
+        return 1
+    else: 
+        return f(n-1)+f(n-2)
+
+n=int(input())
+values = [str(f(x)) for x in range(0, n+1)]
+print (",".join(values))
+
+#--------------------------------------------------------#
+# Problem 68
+
+def EvenGenerator(n):
+    i=0
+    while i<=n:
+        if i%2==0:
+            yield i
+        i+=1
+
+
+n=int(input())
+values = []
+for i in EvenGenerator(n):
+    values.append(str(i))
+
+print (",".join(values))
+
+
+#--------------------------------------------------------#
+
+# Problem 69
+
+def NumGenerator(n):
+    for i in range(n+1):
+        if i%5==0 and i%7==0:
+            yield i
+
+n=int(input())
+values = []
+for i in NumGenerator(n):
+    values.append(str(i))
+
+print (",".join(values))
+
+#--------------------------------------------------------#
+
+# Problem 70
+
+l = [2,4,6,9]
+for i in l:
+    assert i%2==0,"All numbers are not even" 
+    
+    
+#--------------------------------------------------------#
+
+# Problem 71
+
+expression = input()
+print (eval(expression))
+
+#--------------------------------------------------------#
+
+# Problem 72
+
+import math
+def bin_search(l, element):
+    bottom = 0
+    top = len(li)-1
+    index = -1
+    while top>=bottom and index==-1:
+        mid = int(math.floor((top+bottom)/2.0))
+        if l[mid]==element:
+            index = mid
+        elif l[mid]>element:
+            top = mid-1
+        else:
+            bottom = mid+1
+
+    return index
+
+l=[2,5,7,9,11,17,222]
+print (bin_search(l,11))
+print (bin_search(l,12))
+
+
+#--------------------------------------------------------#
+
+
+# Problem 73
+
+import math
+def bin_search(l, element):
+    bottom = 0
+    top = len(l)-1
+    index = -1
+    while top>=bottom and index==-1:
+
+        mid = int(math.floor((top+bottom)/2.0))
+        if l[mid]==element:
+            index = mid
+
+        elif l[mid]>element:
+            top = mid-1
+
+        else:
+            bottom = mid+1
+
+    return index
+
+l=[2,5,7,9,11,17,222]
+print (bin_search(l,11))
+print (bin_search(l,12))
+
+#--------------------------------------------------------#
+
+# Problem 74
+
+import random
+print (random.random()*100)
+
+
+#--------------------------------------------------------#
+
+# Problem 75
+
+import random
+print (random.random()*100-5)
+
+#--------------------------------------------------------#
+
+# Problem 76
+
+import random
+print (random.choice([i for i in range(11) if i%2==0]))
+
+#--------------------------------------------------------#
+
+# Problem 77
+
+import random
+print (random.choice([i for i in range(201) if i%5==0 and i%7==0]))
+
+
+#--------------------------------------------------------#
+
+
+# Problem 78
+
+import random
+print (random.sample(range(100), 5))
+
+#--------------------------------------------------------#
+
+
+# Problem 79
+
+import random
+print (random.sample([i for i in range(100,201) if i%2==0], 5))
+
+#--------------------------------------------------------#
+
+# Problem 80
+
+import random
+print (random.sample([i for i in range(1,1001) if i%5==0 and i%7==0], 5))
+
+#--------------------------------------------------------#
+
+#Problem 81
+
+import random
+print (random.randrange(7,16))
+
+
+#--------------------------------------------------------#
+
+# Problem 82
+
+import zlib
+s = 'hello world!hello world!hello world!hello world!.'.encode()
+t = zlib.compress(s)
+print (t)
+print (zlib.decompress(t))
+
+#--------------------------------------------------------#
+
+# Problem 83
+
+from timeit import Timer
+t = Timer("for i in range(100):1+1")
+print (t.timeit())
+
+
+#--------------------------------------------------------#
+
+# Problem 84
+
+from random import shuffle
+l = [3,6,7,8]
+shuffle(l)
+print (l)
+
+
+#--------------------------------------------------------#
+
+
+# Problem 85
+
+subjects=["I", "You"]
+verbs=["Play", "Love"]
+objects=["Hockey","Football"]
+for i in range(len(subjects)):
+    for j in range(len(verbs)):
+        for k in range(len(objects)):
+            sentence = "%s %s %s." % (subjects[i], verbs[j], objects[k])
+            print (sentence)
 
 
 
+#--------------------------------------------------------#
+
+
+# Problem 86
+
+l = [5,6,77,45,22,12,24]
+l = [x for x in l 
+        if x%2!=0 ]
+print (l)
+
+#--------------------------------------------------------#
+
+# Problem 87
+
+l = [12,24,35,70,88,120,155]
+l = [x for x in l 
+        if x%5!=0 and x%7!=0]
+print (l)
+
+
+#--------------------------------------------------------#
+
+
+# Problem 88
+
+l = [12,24,35,70,88,120,155]
+l = [x for (i,x) in enumerate(l) 
+        if i%2!=0]
+print (l)
+
+
+#--------------------------------------------------------#
+
+
+# Problem 89
+
+array = [[ [0 for col in range(8)] for col in range(5)] for row in range(3)]
+print (array)
+
+
+#--------------------------------------------------------#
+
+# Problem 90
+
+l = [12,24,35,70,88,120,155]
+l = [x for (i,x) in enumerate(l) 
+        if i not in (0,4,5)]
+print (l)
+
+
+#--------------------------------------------------------#
+
+
+# Problem 91
+
+l = [12,24,35,24,88,120,155]
+l = [x for x in l 
+            if x!=24]
+print (l)
+
+
+#--------------------------------------------------------#
+
+# Problem 92
+
+set1=set([1,3,6,78,35,55])
+set2=set([12,24,35,24,88,120,155])
+set1 &= set2
+l=list(set1)
+print (l)
+
+
+#--------------------------------------------------------#
+
+
+#Problem 93
+
+def removeDuplicate( l ):
+    newl=[]
+    seen = set()
+    for item in l:
+        if item not in seen:
+            seen.add( item )
+            newl.append(item)
+
+    return newl
+
+l=[12,24,35,24,88,120,155,88,120,155]
+print (removeDuplicate(l))
 
 
 
+#--------------------------------------------------------#
+
+
+# Problem 94
+
+class Person(object):
+    def getGender( self ):
+        return "Unknown"
+
+class Male( Person ):
+    def getGender( self ):
+        return "Male"
+
+class Female( Person ):
+    def getGender( self ):
+        return "Female"
+
+aMale = Male()
+aFemale= Female()
+print (aMale.getGender())
+
+
+#--------------------------------------------------------#
+
+# Problem 95
+
+dic = {}
+s=input()
+for s in s:
+    dic[s] = dic.get(s,0)+1
+    
+print ('\n'.join(['%s,%s' % (k, v) for k, v in dic.items()]))
+
+
+#--------------------------------------------------------#
+
+
+# Problem 96
+
+s=input()
+s = s[::-1]
+
+print (s)
+
+
+#--------------------------------------------------------#
+
+# Problem 97
+
+s= input()
+s = s[::2]
+print (s)
+
+
+#--------------------------------------------------------#
+
+# Problem 98
+
+import itertools
+print (list(itertools.permutations([1,2,3])))
+
+
+#--------------------------------------------------------#
+
+# Problem 99
+
+def solve(numheads,numlegs):
+    ns='No solutions!'
+    for i in range(numheads+1):
+        j=numheads-i
+        if 2*i+4*j==numlegs:
+            return i,j
+    return ns,ns
+
+numheads=35
+numlegs=94
+solutions=solve(numheads,numlegs)
+print (solutions)
+
+
+#--------------------------------------------------------#
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Problem 100
+# There was a copy of a question so there is only 99 of them
 
 
 
