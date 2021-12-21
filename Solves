@@ -463,22 +463,81 @@ printValue("3","4")
 #--------------------------------------------------------#
 
 
+# Problem 31
+
+def printValue(s1,s2):
+	len1 = len(s1)
+	len2 = len(s2)
+
+	if len1>len2:
+		print (s1)
+
+	elif len2>len1:
+		print (s2)
+
+	else:
+		print (s1)
+		print (s2)
+		
+printValue("one","three")
+
+#--------------------------------------------------------#
 
 
+# Problem 32
+
+def checkValue(n):
+	if n%2 == 0:
+		print ("It is an even number")
+	else:
+		print ("It is an odd number")
+		
+checkValue(7)
 
 
+#--------------------------------------------------------#
 
 
+# Problem 33
+
+def printDict():
+	d=dict()
+	d[1]=1
+	d[2]=2**2
+	d[3]=3**2
+	print (d)
+		
+printDict()
+
+#--------------------------------------------------------#
+
+ # Problem 34
+
+def printDict():
+	d = dict()
+	for i in range(1,21):
+		d[i]=i**2
+	print (d)
+		
+printDict()
+
+#--------------------------------------------------------#
 
 
+# Problem 35
 
+def printDict():
+	d = dict()
+	for i in range(1,21):
+		d[i]=i**2
+	for (k,v) in d.items():	
+		print (v)
+		
+printDict()
 
+#--------------------------------------------------------#
 
-
-
-
-
-
+ # Problem #36
 
 
 
